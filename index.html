@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body >
+
+
+
+        <div id="scatter" style="
+             position: absolute;
+            
+          
+            top: calc(50vh - min(50vw,50vh) );
+            left:  calc(50vw - min(50vw,50vh));
+            width: min(100vw,100vh);
+            height: min(100vw,100vh);         
+            
+                "> </div>
+
+    
+    <!-- for scatter plot-->
+    <script src="https://cdn.plot.ly/plotly-1.58.5.min.js"></script>
+  
+    <!-- Langevin Smulation-->
+    <script src="sim/pushTarget.js"></script>
+    <script src="sim/paras.js"></script>
+    <script src="sim/simulation.js"></script>
+    <script src="sim/scatter.js"></script>
+    <script>
+
+
+        initializeParticles();
+        initializeScatterPlot();
+        const scatterDiv = document.getElementById('scatter');
+
+
+        const markerSize = [];
+        const newMarkerSize = [];
+
+        const relativeMarkerSize = 0.008;
+
+        for (let i = 0; i < particleNumber; i++) {
+            markerSize.push(relativeMarkerSize * (0.5 + Math.random() * 0.5))
+            newMarkerSize.push(markerSize);
+            // console.log(Math.random())
+
+        }
+
+
+
+        function rescaleMarkers() {
+            const rescaleFactor = Math.min(scatterDiv.offsetWidth, scatterDiv.offsetHeight);
+            for (let i = 0; i < particleNumber; i++) {
+                newMarkerSize[i] = markerSize[i] * rescaleFactor;
+            }
+
+        }
+
+
+
+
+
+
+        Plotly.relayout(scatterDiv, {
+            'width': scatterDiv.offsetWidth,
+            'height': scatterDiv.offsetHeight
+        });
+
+        rescaleMarkers();
+        Plotly.restyle('scatter', 'marker.size', [newMarkerSize]);
+
+        window.addEventListener('resize', () => {
+            const divWidth = scatterDiv.offsetWidth;
+            const divHeight = scatterDiv.offsetHeight;
+            rescaleMarkers();
+            Plotly.restyle('scatter', 'marker.size', [newMarkerSize]);
+            Plotly.relayout(scatterDiv, {
+                'width': divWidth,
+                'height': divHeight
+            });
+        });
+
+
+        simulate();
+
+    </script>
+</body>
+
+</html>
