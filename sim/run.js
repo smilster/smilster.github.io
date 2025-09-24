@@ -24,7 +24,7 @@ function resize() {
   rescaleFactor = plotSize / 400;
 
 
-  canvas.width = Math.floor(canvas.clientWidth );
+  canvas.width = Math.floor(canvas.clientWidth);
   canvas.height = Math.floor(canvas.clientHeight);
   canvasWidth = canvas.width;
   canvasHeight = canvas.height;
@@ -96,7 +96,7 @@ const sizes = new Float32Array(particleNumber);
 const sizezUnscaled = new Float32Array(particleNumber);
 
 for (let i = 0; i < particleNumber; i++) {
-  sizezUnscaled[i] = Math.min( Math.abs(3 * generateGaussianRandom()) + 2,6);
+  sizezUnscaled[i] = Math.min(Math.abs(3 * generateGaussianRandom()) + 2, 6);
   sizes[i] = rescaleFactor * sizezUnscaled[i];
 }
 
@@ -119,31 +119,43 @@ gl.vertexAttribPointer(sizeLoc, 1, gl.FLOAT, false, 0, 0);
 
 
 // animation
-function updateFrame() {
-
-  if (isInVP) {
-    simulate();
-    copyValues();
-    glPrepare();
+let last = 0;
+const simulationUpdateTime = 16; // 16ms just below 60Hz and above 120Hz
+function updateFrame(timestamp) {
   
+  if (isInVP) {
+    if ((timestamp - last) >= simulationUpdateTime) {
+      last = timestamp;
+      
+      simulate();
+      copyValues();
+      draw();
+    
+    } 
+    // let last 
+    
+
 
     requestAnimationFrame(updateFrame);
 
-  } else { 
+  } else {
     setTimeout(() => {
       requestAnimationFrame(updateFrame);
     }, 100);
   }
-  }
+}
 
-function glPrepare() { 
-  let opacity = 1; 
-  
+
+
+
+function draw() {
+  let opacity = 1;
+
   if (targetIndex == -1) {
     opacity = Math.min((stepCount - offset) / 100 + 0, 1.0);
-  } 
-  
- gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+  }
+
+  gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
   gl.bufferData(gl.ARRAY_BUFFER, positions, gl.DYNAMIC_DRAW);
 
   gl.bindBuffer(gl.ARRAY_BUFFER, sizeBuffer);
@@ -152,7 +164,7 @@ function glPrepare() {
 
   // render
   gl.viewport(0, 0, canvasWidth, canvasHeight);
-  gl.clearColor(0.2980,   0.5020 ,  0.7176, opacity);
+  gl.clearColor(0.2980, 0.5020, 0.7176, opacity);
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   gl.uniform2f(resolutionLoc, canvasWidth, canvasHeight);
@@ -162,7 +174,7 @@ function glPrepare() {
 function copyValues() {
   for (let i = 0; i < particleNumber; i++) {
     positions[i * 2] = canvasWidth / 2 + rescaleFactor * x[i];
-    positions[i * 2 + 1] = canvasHeight/2 - rescaleFactor * y[i];
+    positions[i * 2 + 1] = canvasHeight / 2 - rescaleFactor * y[i];
     sizes[i] = rescaleFactor * sizezUnscaled[i];
     // random size (pixel units). Increase multiplier if using high-dpr canvas to keep visual size
   }
