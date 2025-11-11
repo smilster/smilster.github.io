@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+
+/*#mainNav {*/
+/*  !* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4); *!*/
+/*  --navbar-transition-time: 0.6s;*/
+/*  background-color: rgba(0, 0, 0, 0);*/
+/*  transition: background-color var(--navbar-transition-time) ease;*/
+/*  ;*/
+/*}*/
+
+/*#mainNav .navbar-brand {*/
+/*  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
+/*  font-weight: 700;*/
+
+/*  !* color: #212529; *!*/
+/*}*/
+
+/*#mainNav .navbar-nav .nav-item .nav-link {*/
+/*  color: #FFFFFFB3;*/
+/*  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
+/*  font-weight: 700;*/
+/*  font-size: 0.9rem;*/
+/*  padding: 0.5rem 0.15rem;*/
+
+/*}*/
+
+/*#mainNav .navbar-nav .nav-item .nav-link:hover,*/
+/*#mainNav .navbar-nav .nav-item .nav-link:active {*/
+/*  color: #FFFFFF;*/
+
+/*}*/
+
+/*#mainNav .navbar-nav .nav-item .nav-link.active {*/
+/*  color: #FFFFFF !important;*/
+/*}*/
+
+/*#mainNav .nav-item {*/
+/*  padding-left: 2.5rem;*/
+/*}*/
+
+
+
+
