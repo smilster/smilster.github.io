@@ -44,7 +44,7 @@ The targets are stored in arrays and generated from images via Monte Carlo trial
             links.ffmpeg
 
         ],
-        modalDescription: `<p> <b>Schiggi Wara</b> (&#643;i&#720;g&#618; 'va&#720;&#x0281;a&#720;) was born in 2010 and has been photographed more than 500K times since 2019. The curiosity about what a turtle does when nobody is watching turned into a fully automated <a href="${links.raspberryPi.href}">Raspberry</a> server, collecting temperatures, humidity and tons of pictures.  
+        modalDescription: `<p> <b>Schiggi Wara</b> (&#643;i&#720;g&#618; 'va&#720;&#x0281;a&#720;) was born in 2010 and has been photographed more than 500K times since 2019. The curiosity about what a turtle does when nobody is watching turned into a fully automated <a href="${links.raspberryPi.href}" rel="external">Raspberry</a> server, collecting temperatures, humidity and tons of pictures.  
     </p>
     <p>The camera is controlled by the <a href="${links.picamera2.href}" rel="external">picamera2</a> package, which sets up a local network stream buffering the last two frames in <a href="${links.numpy.href}" rel="external">${links.numpy.label}</a> arrays. A rather simple yet fast algorhithm compares pixel changes and stores frames as JPEGs if some thresholds are met. In parallel, another script collects data from the DHT22 and several DS18B20 sensors, as well as from the <a href="https://weather.uni-freiburg.de" rel="external">weather station of the University of Freiburg</a> for some outside reference. The data is periodically read by an <a href="${links.gnuOctave.href}" rel="external">${links.gnuOctave.label}</a> script visualizing the past two days in the SVG plot above.</p>
     <p>

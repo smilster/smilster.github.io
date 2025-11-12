@@ -46,7 +46,7 @@ Open-source, unrestricted command-line access and everything is a file. I feel c
         label: 'JavasScript',
         progress: 50,
         code: 'const updateFrame = (timestamp) => {\n' + '    draw();\n' + '    simulate();\n' + '    requestAnimationFrame(updateFrame);\n' + '};',
-        text: `<a href="${links.js.href}" rel="external">${links.js.label}</a> is my favorite choice for interactive applets for teaching like <a href="javascript:void(0);" onclick="Card.list.get('integrators').click()">In&shy;ter&shy;ac&shy;tive Sim&shy;u&shy;la&shy;tions</a>, for visualizations like the <a href="javascript:void(0);" onclick="Card.list.get('webPage').click()">WebGL An&shy;i&shy;ma&shy;tion</a> above, or for inspiration <a href="javascript:void(0);" onclick="Card.list.get('choirJS').click()">Choir.js</a>.
+        text: `<a href="${links.js.href}" rel="external">${links.js.label}</a> is my favorite choice for interactive applets. E.g., for teaching with <a href="javascript:void(0);" onclick="Card.list.get('integrators').click()">In&shy;ter&shy;ac&shy;tive Sim&shy;u&shy;la&shy;tions</a>, for visualizations like the <a href="javascript:void(0);" onclick="Card.list.get('webPage').click()">WebGL An&shy;i&shy;ma&shy;tion</a> above, or for inspiration, see <a href="javascript:void(0);" onclick="Card.list.get('choirJS').click()">Choir.js</a>.
         
    
         `
@@ -70,7 +70,7 @@ Open-source, unrestricted command-line access and everything is a file. I feel c
     Transmitter transmitter =
         keyboard.getTransmitter();
     transmitter.setReceiver(receiver);
-}`, text: `Great versatility, cross-platform and smooth integration with the operating system.  <a href="${links.java.href}" rel="external">Java</a> has become my favorite tool for real-time <a href="${links.midi.href}" rel="external">MIDI</a> processing, such as microtonal music or my 
+}`, text: `Great versatility, cross-platform and smooth integration with the operating system.  <a href="${links.java.href}" rel="external">Java</a> has become my favorite tool for real-time <a href="${links.midi.href}" rel="external">MIDI</a> processing, e.g., to experiment with microtonal music or for my 
         <a href="javascript:void(0);" onclick="Card.list.get('choirJava').click()">Stochastic Music Companion</a>
         `
 

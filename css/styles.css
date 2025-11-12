@@ -74,42 +74,7 @@ a:not(.btn, .nav-link, .navbar-brand):hover {
 
 }
 
-/*!* 1. Target links with rel="external" *!*/
-/*a:not(.btn, .github-link)[rel~="external"] {*/
-/*    !* Required to position the icon relative to the link text *!*/
-/*    position: relative;*/
-/*    !* Add padding to make space for the icon on the right (adjust as needed) *!*/
-/*    padding-right: 1.2em;*/
-/*}*/
 
-/*!* 2. Style and position the icon using ::after *!*/
-/*a:not(.btn, .github-link)[rel~="external"]::after {*/
-/*    !* Required, but kept empty since we're using a background image *!*/
-/*    content: "";*/
-
-/*    !* Display properties for the icon box *!*/
-/*    display: inline-block;*/
-/*    width: 0.85em;  !* Set the width of the icon, relative to the link font size *!*/
-/*    height: 0.85em; !* Set the height of the icon *!*/
-
-/*    !* Positioning *!*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    right: 2px;*/
-/*    transform: translateY(-50%); !* Fine-tune vertical centering *!*/
-
-/*    !* --- SVG Integration --- *!*/
-/*    !* IMPORTANT: Replace 'path/to/your/external-icon.svg' with the actual path *!*/
-/*    background-image: url('../img/icons/extLink.svg');*/
-
-
-/*    !* Ensure the icon fits without repeating or getting cut off *!*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: center;*/
-/*    background-size: contain;*/
-
-/*    transition: filter 0.1s linear;*/
-/*}*/
 
 a:not(.btn, .github-link)[rel~="external"] {
     padding-right: 0; /* no need for padding */
@@ -630,7 +595,8 @@ canvas {
     transform: translate(-50%, -50%);
     margin: 0;
     padding: 0;
-    font-family: "Lekton Bold", monospace;
+    font-family:  monospace;
+    font-weight: 600;
     position: absolute;
 
 

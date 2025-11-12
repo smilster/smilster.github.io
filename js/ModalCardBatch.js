@@ -158,6 +158,13 @@ class ModalCardBatch {
         if (item.demoLink !== '') {
             const play = this.createIconLink(item.demoLink, 'Run', 'img/icons/play.svg')
 
+            if (item.id === 'webPage') {
+                play.addEventListener("click",()=>{
+                    const modalDiv = document.getElementById(item.id);
+                    bootstrap.Modal.getInstance(modalDiv).hide();
+                })
+            }
+
             play.classList.add('col-2', 'col-lg-1')
             modalFooter.appendChild(play);
             iconCount = iconCount + 1;
