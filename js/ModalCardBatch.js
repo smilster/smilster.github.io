@@ -47,7 +47,7 @@ class ModalCardBatch {
         const videoCol = document.createElement('div');
         videoCol.classList.add('col');
 
-        const video = modal.createVideo(item.modalVideo, '100%');
+        const video = modal.createVideo(item.modalVideo, '100%',true,true,true);
         videoCol.appendChild(video);
 
         const imageCol = document.createElement('div');
