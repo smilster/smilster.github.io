@@ -590,6 +590,38 @@ canvas {
 .esaef { left: 8.1rem; top: 3.3rem; }
 .vdrwh { left: 6.9rem; top: 3.3rem; }
 
+.em-gxdeu { left: 8.1rem; top: 1.1rem; }
+.em-dseay { left: 9.3rem; top: 1.1rem; }
+.em-qmcjz { left: 4.5rem; top: 1.1rem; }
+.em-hsidc { left: 5.1rem; top: 1.1rem; }
+.em-fthjm { left: 3.3rem; top: 1.1rem; }
+.em-gfotm { left: 2.1rem; top: 1.1rem; }
+.em-maiuu { left: 2.7rem; top: 1.1rem; }
+.em-tlokg { left: 3.9rem; top: 1.1rem; }
+.em-ofnkb { left: 9.9rem; top: 1.1rem; }
+.em-ubccq { left: 1.5rem; top: 1.1rem; }
+.em-kavol { left: 0.3rem; top: 1.1rem; }
+.em-fyfxx { left: 7.5rem; top: 1.1rem; }
+.em-cldro { left: 0.9rem; top: 1.1rem; }
+.em-tlzjk { left: 5.7rem; top: 1.1rem; }
+.em-frgrq { left: 6.3rem; top: 1.1rem; }
+.em-dfhdj { left: 6.9rem; top: 1.1rem; }
+.em-iaqmz { left: 8.7rem; top: 1.1rem; }
+.em-iuvia { left: 10.5rem; top: 1.1rem; }
+
+
+.em {
+    width: 10px;
+    transform: translate(-50%, -100%);
+    margin: 0;
+    padding: 0;
+    font-family:  monospace;
+    font-weight: 600;
+    position: absolute;
+
+
+}
+
 .imp {
     width: 10px;
     transform: translate(-50%, -50%);
@@ -601,6 +633,9 @@ canvas {
 
 
 }
+
+
+
 
 .imp-body {
     -webkit-touch-callout: none;

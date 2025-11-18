@@ -57,7 +57,29 @@ legal.style.position = 'relative';
 legalModal.body.appendChild(legal);
 
 const mail = document.createElement('div');
-mail.innerHTML = 'smilster@gmail.com';
+mail.style.height = '30px';
+mail.style.position = 'relative';
+mail.innerHTML = '';
+mail.innerHTML +=`
+<div class="em em-gxdeu">l</div>
+<div class="em em-dseay">c</div>
+<div class="em em-qmcjz">r</div>
+<div class="em em-hsidc">@</div>
+<div class="em em-fthjm">t</div>
+<div class="em em-gfotm">l</div>
+<div class="em em-maiuu">s</div>
+<div class="em em-tlokg">e</div>
+<div class="em em-ofnkb">o</div>
+<div class="em em-ubccq">i</div>
+<div class="em em-kavol">s</div>
+<div class="em em-fyfxx">i</div>
+<div class="em em-cldro">m</div>
+<div class="em em-tlzjk">g</div>
+<div class="em em-frgrq">m</div>
+<div class="em em-dfhdj">a</div>
+<div class="em em-iaqmz">.</div>
+<div class="em em-iuvia">m</div>
+`
 
 legalModal.body.appendChild(mail);
 
