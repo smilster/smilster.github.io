@@ -155,7 +155,7 @@ Choir.js itself does not understand chord progression or harmony. Instead, a goo
         ],
         modalDescription: `<p> The <b>Stochastic Music Companion</b> is one of my latest projects, and it is in a very early state. It's written <a href="${links.java.href}" rel="external">${links.java.label}</a> and employs the standard Sound API and the <a href="${links.javaxMidi.href}" rel="external">${links.javaxMidi.label}</a> package to process <a href="${links.midi.href}" rel="external">${links.midi.label}</a> data. In summary, it listens to MIDI inputs, e.g., from a MIDI keyboard, produces accompanying voices based on the chosen scale and inter-voice relations, and sends them to virtual MIDI ports, which allows real-time playback by arbitrary midi devices such as virtual instruments. </p>
 <p>
-In the video, I play some melody with on the keyboard and the <b>Stochastic Music Companion</b> creates additional pitches, which are played back by <a href="${links.qsynth.href}" rel="external">${links.qsynth.label}</a> and visualized by <a href="${links.vmpk.href}" rel="external">${links.vmpk.label}</a>. The musical result is far from perfect, but much better than my own piano skills.
+In the video, I play a melody on the keyboard and the <b>Stochastic Music Companion</b> creates additional pitches on the fly, which are played back by <a href="${links.qsynth.href}" rel="external">${links.qsynth.label}</a> and visualized by <a href="${links.vmpk.href}" rel="external">${links.vmpk.label}</a>. The musical result is far from perfect, but much better than my own piano skills.
 </p>
         `
     },
