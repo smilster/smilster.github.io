@@ -1,4 +1,4 @@
-
+// credits
 const creditsData = {
     id: 'credits',
     category: 'Credits',
@@ -30,14 +30,7 @@ creditsData.links.forEach(link => {
 
 document.getElementById('modal-container').append(creditModal.div);
 
-
-////////////////////////////
-////////////////////////////
-////////////////////////////
-////////////////////////////
-////////////////////////////
-////////////////////////////
-
+// legal
 const legatData = {
     id: 'legal',
     category: 'Impressum',
@@ -54,37 +47,9 @@ const legal = document.createElement('div');
 legal.style.height = '80px';
 legal.style.position = 'relative';
 
-legalModal.body.appendChild(legal);
 
-const mail = document.createElement('div');
-mail.style.height = '30px';
-mail.style.position = 'relative';
-mail.innerHTML = '';
-mail.innerHTML +=`
-<div class="em em-gxdeu">l</div>
-<div class="em em-dseay">c</div>
-<div class="em em-qmcjz">r</div>
-<div class="em em-hsidc">@</div>
-<div class="em em-fthjm">t</div>
-<div class="em em-gfotm">l</div>
-<div class="em em-maiuu">s</div>
-<div class="em em-tlokg">e</div>
-<div class="em em-ofnkb">o</div>
-<div class="em em-ubccq">i</div>
-<div class="em em-kavol">s</div>
-<div class="em em-fyfxx">i</div>
-<div class="em em-cldro">m</div>
-<div class="em em-tlzjk">g</div>
-<div class="em em-frgrq">m</div>
-<div class="em em-dfhdj">a</div>
-<div class="em em-iaqmz">.</div>
-<div class="em em-iuvia">m</div>
-`
-
-legalModal.body.appendChild(mail);
-
-
-legal.innerHTML += `<div class="imp hkxrt">w</div>
+legal.innerHTML += `
+<div class="imp hkxrt">w</div>
 <div class="imp toqad">s</div>
 <div class="imp ebqwa">a</div>
 <div class="imp pvrns"> </div>
@@ -133,8 +98,35 @@ legal.innerHTML += `<div class="imp hkxrt">w</div>
 <div class="imp esaef">g</div>
 <div class="imp vdrwh">u</div>
 
-
 `
-// legalModal.dialog.classList.remove('modal-lg');
-// legalModal.dialog.classList.add('modal-sm');
+
+const mail = document.createElement('div');
+mail.style.height = '30px';
+mail.style.position = 'relative';
+mail.innerHTML = '';
+mail.innerHTML +=`
+<div class="em em-gxdeu">l</div>
+<div class="em em-dseay">c</div>
+<div class="em em-qmcjz">r</div>
+<div class="em em-hsidc">@</div>
+<div class="em em-fthjm">t</div>
+<div class="em em-gfotm">l</div>
+<div class="em em-maiuu">s</div>
+<div class="em em-tlokg">e</div>
+<div class="em em-ofnkb">o</div>
+<div class="em em-ubccq">i</div>
+<div class="em em-kavol">s</div>
+<div class="em em-fyfxx">i</div>
+<div class="em em-cldro">m</div>
+<div class="em em-tlzjk">g</div>
+<div class="em em-frgrq">m</div>
+<div class="em em-dfhdj">a</div>
+<div class="em em-iaqmz">.</div>
+<div class="em em-iuvia">m</div>
+`
+
+
+legalModal.body.appendChild(legal);
+legalModal.body.appendChild(mail);
+
 document.getElementById('modal-container').append(legalModal.div);

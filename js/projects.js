@@ -20,7 +20,6 @@ const projects = [
 The targets are stored in arrays and generated from images via Monte Carlo trials. This task is executed by an <a href="${links.gnuOctave.href}" rel="external">${links.gnuOctave.label}</a> script, which also supports the insertion of <a href="${links.laTeX.href}" rel="external">${links.laTeX.label}</a> syntax to create images containing formatted text or equations.
 </p>
 
-
         `
     },
     {
@@ -35,14 +34,10 @@ The targets are stored in arrays and generated from images via Monte Carlo trial
         hashTags: [
             links.raspberryPi,
             links.python,
-            // links.picamera2,
-            // links.numpy,
             links.gnuOctave,
             links.bash,
             links.gitHubActions,
-            // links.docker,
             links.ffmpeg
-
         ],
         modalDescription: `<p> <b>Schiggi Wara</b> (&#643;i&#720;g&#618; 'va&#720;&#x0281;a&#720;) was born in 2010 and has been photographed more than 500K times since 2019. The curiosity about what a turtle does when nobody is watching turned into a fully automated <a href="${links.raspberryPi.href}" rel="external">Raspberry</a> server, collecting temperatures, humidity and tons of pictures.  
     </p>
@@ -75,14 +70,10 @@ In summary, we successfully implemented CUDA-aware <a href="${links.openMPI.href
 <p>
 See <a href="${links.ttLammpsV100.href}" rel="external">${links.ttLammpsV100.label}</a> and <a href="${links.ttLammpsMultiGpu.href}" rel="external">${links.ttLammpsMultiGpu.label}</a> for more information.
 </p>
-
-
-
-
         `
     },
     {
-        id: 'choirJs',
+        id: 'choirJS',
         cardImage: 'choir.jpg',
         modalImage: 'choir.jpg',
         category: 'Algorithmic Music Composition',
@@ -133,7 +124,6 @@ Choir.js itself does not understand chord progression or harmony. Instead, a goo
 </ul>
 </p>
 
-
         `
     },
     {
@@ -182,7 +172,6 @@ The choice of integration scheme in particle simulations determines both accurac
 <p>
 
 </p>
-
      
         `
     }

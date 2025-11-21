@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 
-// canvas.parentElement.style.height = window.innerHeight + 'px';
+
+//    W E B G L
 
 // Ask for premultipliedAlpha:false to avoid premultiplication surprises in some browsers
 const webGlOptions = {
@@ -82,6 +83,12 @@ const posLoc = webGlContext.getAttribLocation(program, 'aPosition');
 const sizeLoc = webGlContext.getAttribLocation(program, 'aSize');
 const resolutionLoc = webGlContext.getUniformLocation(program, 'uResolution');
 
+
+// init buffers
+let posBuffer = null;
+let sizeBuffer = null
+
+
 // Particle data
 let rescaleFactor = 0;
 let plotSize = 0;
@@ -95,11 +102,27 @@ for (let i = 0; i < particleNumber; i++) {
 }
 
 
-// initialize
 
+
+// animation timing
+let last = 0; // last timestamp
+const simulationUpdateTime = 15; //  below 60Hz and above 90Hz
+
+// init and run
 
 initializeParticles();
 copyValues();
+initializeBuffers();
+checkCanvasVisibility(canvas);
+clear();
+buffer();
+setTimeout(() => {
+    canvas.style.opacity = '1';
+    requestAnimationFrame(updateFrame);
+}, 600)
+
+
+// FUNCTIONS
 
 
 /////////////////////////////////////////
@@ -125,25 +148,6 @@ function initializeBuffers() {
     webGlContext.vertexAttribPointer(sizeLoc, 1, webGlContext.FLOAT, false, 0, 0);
 
 }
-
-let posBuffer = null;
-let sizeBuffer = null
-initializeBuffers();
-
-
-// animation
-let last = 0;
-const simulationUpdateTime = 15; //  below 60Hz and above 90Hz
-
-
-checkCanvasVisibility(canvas);
-clear();
-buffer();
-setTimeout(() => {
-    canvas.style.opacity = '1';
-    requestAnimationFrame(updateFrame);
-}, 600)
-
 
 function updateFrame(timestamp) {
     checkCanvasVisibility(canvas)
@@ -195,7 +199,7 @@ function updateFrame(timestamp) {
 
 function buffer() {
 
-// update positions
+    // update positions
     webGlContext.bindBuffer(webGlContext.ARRAY_BUFFER, posBuffer);
     // webGlContext.bufferData(webGlContext.ARRAY_BUFFER, positions, webGlContext.DYNAMIC_DRAW);
     webGlContext.bufferSubData(webGlContext.ARRAY_BUFFER, 0, positions);
@@ -208,7 +212,6 @@ function buffer() {
 }
 
 function clear() {
-    // webGlContext.clearColor(1.2980, 0.5020, 0.7176, 1); // pink debug color
     webGlContext.clearColor(0.2980, 0.5020, 0.7176, 1);
     webGlContext.clear(webGlContext.COLOR_BUFFER_BIT);
 }
@@ -220,63 +223,48 @@ function draw() {
 
 
 function checkCanvasVisibility(element) {
-    canvasIsInViewport = element.getBoundingClientRect().bottom >= transparencyThresholds[transparencyThresholdId]; //0.05 * Math.min(window.innerHeight, window.innerWidth)
-    canvasIsInViewportExtended = element.getBoundingClientRect().bottom >= -window.visualViewport.height; //0.05 * Math.min(window.innerHeight, window.innerWidth)
-    // setTimeout(() => {
-    //     checkCanvasVisibility(element)
-    // }, 100);
-
+    canvasIsInViewport = element.getBoundingClientRect().bottom >= transparencyThresholds[transparencyThresholdId];
+    canvasIsInViewportExtended = element.getBoundingClientRect().bottom >= -window.visualViewport.height;
 }
 
-
+// copy current simulation state
 function copyValues() {
     for (let i = 0; i < particleNumber; i++) {
         positions[i * 2] = canvas.width / 2 + rescaleFactor * x[i];
         positions[i * 2 + 1] = canvas.height / 2 - rescaleFactor * y[i];
         sizes[i] = rescaleFactor * sizesUnscaled[i];
-        // random size (pixel units). Increase multiplier if using high-dpr canvas to keep visual size
     }
 }
 
+// compile shaders
 function compile(type, source) {
-    const s = webGlContext.createShader(type);
-    webGlContext.shaderSource(s, source);
-    webGlContext.compileShader(s);
-    if (!webGlContext.getShaderParameter(s, webGlContext.COMPILE_STATUS)) {
-        console.error(webGlContext.getShaderInfoLog(s));
+    const shader = webGlContext.createShader(type);
+    webGlContext.shaderSource(shader, source);
+    webGlContext.compileShader(shader);
+    if (!webGlContext.getShaderParameter(shader, webGlContext.COMPILE_STATUS)) {
+        console.error(webGlContext.getShaderInfoLog(shader));
         throw new Error('Shader compile error');
     }
-    return s;
+    return shader;
 }
 
 // Resize 
-
-//
-//
 function resizeCanvas() {
     canvas.width = canvas.parentElement.clientWidth;
     canvas.height = canvas.parentElement.clientHeight;
-
-    // canvas.style.width = canvas.width + 'px';
     canvas.style.height = canvas.height + 'px';
-
 
     const plotSizeTarget = Math.min(canvas.width, canvas.height)
 
-
     if (plotSize !== plotSizeTarget) {
 
-
         let deltaPlotSize = 0.05 * (plotSizeTarget - plotSize);
-
         if (Math.abs(deltaPlotSize) < 1) {
             deltaPlotSize = Math.sign(deltaPlotSize);
         }
 
-
         plotSize = plotSize + deltaPlotSize;
         rescaleFactor = plotSize / 400;
-
 
         webGlContext.viewport(0, 0, canvas.width, canvas.height);
         webGlContext.uniform2f(resolutionLoc, canvas.width, canvas.height);
@@ -290,7 +278,6 @@ function resizeCanvasWrapper() {
     const heightTarget = window.innerHeight + 10;
     let height = canvas.parentElement.clientHeight;
 
-
     if (height !== heightTarget) {
         const delta = 0.15
         let deltaHeight = delta * (heightTarget - height) ;
@@ -300,17 +287,12 @@ function resizeCanvasWrapper() {
         height = height + deltaHeight;
         canvas.parentElement.style.height = height + 'px';
     }
-
-
 }
-
 
 function generateGaussianRandom() {
     let u1 = Math.random();
     let u2 = Math.random();
     return Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
 }
-
-
 
 

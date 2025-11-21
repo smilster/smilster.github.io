@@ -1,18 +1,10 @@
 
-
 let navbarIsTransparent = true;
-
-
 
 const transparencyThresholds = [];
 transparencyThresholds.push(71);
 transparencyThresholds.push(233);
 let transparencyThresholdId = 0;
-
-
-
-
-
 
 
 const navbarDiv = document.getElementById('mainNav');
@@ -24,10 +16,6 @@ function setNavbarTransparent() {
     navbarDiv.style.backgroundColor = "rgba(0,0,0,0)";
     navbarDiv.classList.remove("shadow-strong")
 }
-
-
-
-
 
 
 function toggleTransparencyThreshold() {
@@ -54,12 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dynamicNavbarColor();
 
-
-
     const navbarCollapse = document.getElementById("navbarResponsive");
     const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
 
-    // 1) Close when clicking outside
+    // Close when clicking outside
     document.addEventListener("click", function (event) {
         if (
             navbarCollapse.classList.contains("show") && // menu is open
@@ -72,11 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
-
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
-
 
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -84,8 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
             rootMargin: '0px 0px -50%',
         });
     }
-
-
 
 
     // Collapse responsive navbar when toggler is visible
@@ -102,12 +83,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
-
-
-
 });
-
-
-
-

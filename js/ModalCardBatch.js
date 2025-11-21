@@ -2,9 +2,6 @@ class ModalCardBatch {
 
     constructor(divId, name, data) {
         this.cardContainer = document.getElementById(divId);
-        // this.modalsContainer = document.createElement("div");
-        // // this.modalsContainer.style.height = "0%";
-        // this.modalsContainer.id = name + '-modals';
         this.modalsContainer = document.getElementById('modal-container');
 
         if (name === 'papers') {
@@ -14,7 +11,6 @@ class ModalCardBatch {
         if (name === 'projects') {
             this.createProjectModalCards(data, name);
         }
-
 
     }
 
@@ -28,7 +24,6 @@ class ModalCardBatch {
     createProjectModalCards(data, name) {
         data.forEach(item => {
             const card = Card.create(item, name);
-            // card.classList.add('col-11','col-sm-9','col-md-5','col-lg-3','mx-auto');
             this.cardContainer.appendChild(card);
             const modal = this.createProjectModal(item)
 
@@ -182,7 +177,6 @@ class ModalCardBatch {
     createPaperModalCards(data, name) {
         data.forEach(item => {
             const card = Card.create(item, name);
-            // card.classList.add('col-9','col-sm-5','col-md-4','col-lg-3');
             this.cardContainer.appendChild(card);
             const modal = this.createPaperModal(item)
 
@@ -283,9 +277,5 @@ class ModalCardBatch {
         return modalFooter;
     }
 
-
 }
-
-// Get the containers
-
 
