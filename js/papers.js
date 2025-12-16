@@ -74,12 +74,12 @@ const papers = [
         category: 'More',
         name: 'Publications',
         modalImage: 'list_thumb.jpg',
-        modalDescription: 'Find my list of papers on ' + '<a href="${data.modalPaperWebLink}" rel="external" class="mt-3">Google&nbsp;Scholar</a>.',
+        modalDescription: `Find my list of papers on <a href="https://scholar.google.com/citations?hl=en&user=rP3G56AAAAAJ&view_op=list_works&sortby=pubdate" rel="external" class="mt-3">Google&nbsp;Scholar</a>.`,
         modalPaperTitle: '',
         modalPaperAuthors: '',
         modalPaperYear: '',
         modalPaperJournal: '',
-        modalPaperWebLink: 'https://scholar.google.com/citations?hl=en&user=rP3G56AAAAAJ&view_op=list_works&sortby=pubdate',
+        modalPaperWebLink: '',
         modalPaperPdf: 'null'
     }
 
