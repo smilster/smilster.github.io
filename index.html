@@ -129,7 +129,7 @@
             <div class="col-md-6 col-lg-5 order-md-2 my-auto px-0">
 
                 <!-- portrait -->
-                <div id="portrait" class="d-none">
+                <div id="portrait">
                     <div class="rounded-circle portrait portrait-image mx-auto"></div>
                 </div>
                 <div class="portrait-name py-2 fw-bold">Sebastian</div>
@@ -316,8 +316,8 @@
 <script src="js/navbar.js"></script>
 
 <!-- hide portrait pic in case of ?nopic search tag   -->
-<script>if (window.location.search.includes('showpic')) {
-    document.getElementById('portrait').classList.remove('d-none');
+<script>if (window.location.search.includes('hidepic')) {
+    document.getElementById('portrait').classList.add('d-none');
 }</script>
 
 <!-- run simulation in div wit id=canvas -->
