@@ -54,7 +54,7 @@ class CV {
 `,'Bundesfreiwilligendienst and free-time volunteer work')
 
 	// RBO
-        cv.createAffiliation('Rehabiliationszentrum Berlin-Ost','RBO.png',56)
+        cv.createAffiliation('Rehabilitationszentrum Berlin-Ost','RBO.png',56)
         cv.createCvEntry('09/2007','05/2008','Community Service','Care and support for people with disabilities','Zivildienst')
 
         ////////////////////////
