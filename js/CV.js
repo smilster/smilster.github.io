@@ -57,15 +57,15 @@ class CV {
         cv.createAffiliation('Rehabilitationszentrum Berlin-Ost','RBO.png',56)
         cv.createCvEntry('09/2007','05/2008','Community Service','Care and support for people with disabilities','Zivildienst')
 
-        ////////////////////////
-        // school
-        cv.createHeading('School')
-        // const spacer = document.createElement('div')
-        // spacer.className = 'mt-4';
-
-        // cv.col.appendChild(spacer);
-        cv.createCvEntry('08/1999','06/2007','Abitur','','Georg-Forster-Gymnasium, Berlin')
-        cv.createCvEntry('08/2003','07/2004','High School Exchange','','Livingstone High School, Cape Town')
+        // ////////////////////////
+        // // school
+        // cv.createHeading('School')
+        // // const spacer = document.createElement('div')
+        // // spacer.className = 'mt-4';
+        //
+        // // cv.col.appendChild(spacer);
+        // cv.createCvEntry('08/1999','06/2007','Abitur','','Georg-Forster-Gymnasium, Berlin')
+        // cv.createCvEntry('08/2003','07/2004','High School Exchange','','Livingstone High School, Cape Town')
 
     }
 

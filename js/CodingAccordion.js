@@ -12,7 +12,7 @@ Open-source, unrestricted command-line access and everything is a file. I feel c
         `
 
     }, {
-        id: 'lammps', language: 'lammps', label: 'LAMMPS', progress: 65, text: `<a href="${links.lammps.href}" rel="external">LAMMPS</a> requires a solid knowledge, yet provides an extremely performant scripting interface for particle simulations. I have used it in my scientific work, e.g.,  <a href="javascript:void(0)" onclick="Card.list.get('NEQMembrane').click()">Steered Mole&shy;cu&shy;lar Dy&shy;nam&shy;ics</a> and <a href="javascript:void(0);" onclick="Card.list.get('EQmemory').click()">Gen&shy;er&shy;al&shy;ized Lan&shy;ge&shy;vin</a>, as well as for benchmarking <a href="javascript:void(0);" onclick="Card.list.get('hpc').click()">HPC GPU per&shy;for&shy;mance</a>.
+        id: 'lammps', language: 'lammps', label: 'LAMMPS', progress: 70, text: `<a href="${links.lammps.href}" rel="external">LAMMPS</a> requires a solid knowledge, yet provides an extremely performant scripting interface for particle simulations. I have used it in my scientific work, e.g.,  <a href="javascript:void(0)" onclick="Card.list.get('NEQMembrane').click()">Steered Mole&shy;cu&shy;lar Dy&shy;nam&shy;ics</a> and <a href="javascript:void(0);" onclick="Card.list.get('EQmemory').click()">Gen&shy;er&shy;al&shy;ized Lan&shy;ge&shy;vin</a>, as well as for benchmarking <a href="javascript:void(0);" onclick="Card.list.get('hpc').click()">HPC GPU per&shy;for&shy;mance</a>.
         
         
         `
@@ -21,11 +21,18 @@ Open-source, unrestricted command-line access and everything is a file. I feel c
         id: 'js',
         language: 'javascript',
         label: 'JavasScript',
-        progress: 50,
+        progress: 55,
         text: `<a href="${links.js.href}" rel="external">${links.js.label}</a> is my favorite choice for interactive applets. E.g., for teaching with <a href="javascript:void(0);" onclick="Card.list.get('integrators').click()">In&shy;ter&shy;ac&shy;tive Sim&shy;u&shy;la&shy;tions</a>, for visualizations like the <a href="javascript:void(0);" onclick="Card.list.get('webPage').click()">WebGL An&shy;i&shy;ma&shy;tion</a> above, or for inspiration, see <a href="javascript:void(0);" onclick="Card.list.get('choirJS').click()">Choir.js</a>.
         
    
         `
+
+    }, {
+        id: 'python',
+        language: 'python',
+        label: 'Python',
+        progress: 50,
+        text: `<a href="https://www.python.org/" rel="external">Python</a> is always handy due to its vast range in packages and online resources. I used its <a href="https://www.tensorflow.org/" rel="external">TensorFlow</a> and <a href="https://keras.io/" rel="external">Keras</a> APIs for deep-learning benchmarks on high performance GPUs, and it is the core language for my <a href="javascript:void(0);" onclick="Card.list.get('schiggi').click()">Smart Turtle</a>.`
 
     }, {
         id: 'java',
@@ -35,13 +42,6 @@ Open-source, unrestricted command-line access and everything is a file. I feel c
         text: `Great versatility, cross-platform and smooth integration with the operating system.  <a href="${links.java.href}" rel="external">Java</a> has become my favorite tool for real-time <a href="${links.midi.href}" rel="external">MIDI</a> processing, e.g., to experiment with microtonal music or for my 
         <a href="javascript:void(0);" onclick="Card.list.get('choirJava').click()">Stochastic Music Companion</a>
         `
-
-    }, {
-        id: 'python',
-        language: 'python',
-        label: 'Python',
-        progress: 35,
-        text: `<a href="https://www.python.org/" rel="external">Python</a> is always handy due to its vast range in packages and online resources. I used its <a href="https://www.tensorflow.org/" rel="external">TensorFlow</a> and <a href="https://keras.io/" rel="external">Keras</a> APIs for deep-learning benchmarks on high performance GPUs, and it is the core language for my <a href="javascript:void(0);" onclick="Card.list.get('schiggi').click()">Smart Turtle</a>.`
 
     }];
 
