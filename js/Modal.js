@@ -81,20 +81,19 @@ class Modal {
         this.body.appendChild(image);
     }
 
-    createVideo(videoSource,width = '80%', autoplay = true, loop = true,controls = false ) {
+    createVideo(videoSource,width = '80%', loop = true,controls = false ) {
         const video = document.createElement('video');
         video.src = videoSource;
         video.className = 'mb-4 h-auto d-block rounded-3';
         video.style.width = width;
         video.alt = this.name;
-        video.autoplay = autoplay;
         video.controls = controls;
         video.loop = loop;
         return video;
     }
 
-    addVideo(videoSource,width = '80%', autoplay = true, loop = true,controls=false ) {
-        const video = this.createVideo(videoSource,  width,autoplay,loop,controls);
+    addVideo(videoSource,width = '80%',  loop = true,controls=false ) {
+        const video = this.createVideo(videoSource,  width,loop,controls);
         video.classList.add('mx-auto')
         this.div.addEventListener('hidden.bs.modal', (e) => {
             video.pause();
